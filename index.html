@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Chain Reaction</title>
+  <link rel="icon" type="image/png" href="/assets/icon.png" />
+  <link rel="apple-touch-icon" href="/assets/icon.png" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%; height: 100%;
+      background: oklch(18% 0.006 88);
+      overflow: hidden;
+      touch-action: none;
+      -webkit-user-select: none;
+      user-select: none;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    #canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: oklch(18% 0.006 88);
+      color: oklch(78% 0.12 86);
+      z-index: 10;
+      transition: opacity 0.4s ease;
+      gap: 8px;
+    }
+    #loading.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
+    #loading h1 { font-size: 2rem; font-weight: 750; letter-spacing: 0; }
+    #loading p { color: oklch(69% 0.01 88); font-size: 0.9rem; }
+    #loading .error { color: oklch(67% 0.2 25); margin-top: 1rem; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <h1>Chain Reaction</h1>
+    <p id="loading-text">Click to start</p>
+    <p id="loading-error" class="error" style="display:none"></p>
+  </div>
+  <canvas id="canvas"></canvas>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
