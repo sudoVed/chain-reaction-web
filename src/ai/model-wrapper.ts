@@ -6,6 +6,7 @@ import { Game } from '../game';
 
 ort.env.wasm.numThreads = 1;
 ort.env.wasm.wasmPaths = {
+  mjs: '/ort-wasm-simd-threaded.mjs',
   wasm: '/ort-wasm-simd-threaded.wasm',
 };
 
