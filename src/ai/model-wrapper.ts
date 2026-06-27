@@ -1,12 +1,12 @@
 // model-wrapper.ts — ONNX Runtime Web inference wrapper.
 // Encodes game state → runs quantized DQN → returns Q-values.
 
-import * as ort from 'onnxruntime-web';
+import * as ort from 'onnxruntime-web/wasm';
 import { Game } from '../game';
 
 ort.env.wasm.numThreads = 1;
 ort.env.wasm.wasmPaths = {
-  wasm: '/ort-wasm-simd-threaded.jsep.wasm',
+  wasm: '/ort-wasm-simd-threaded.wasm',
 };
 
 export class DQNModel {
